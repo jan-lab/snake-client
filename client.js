@@ -1,7 +1,7 @@
 const net = require("net");
 
 // establishes a connection with the game server
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection({
     host: '135.23.223.133', // IP address here,
     port: 50542 // PORT number here,
@@ -23,8 +23,48 @@ const connect = function () {
     conn.write('Name: COO');
   });
 
+  //conn.on('connect', () => {
+    //Send the string "Move: up" as data to the server via the conn object.
+    
+    //// Case.1
+    //conn.write('Move: up');
 
+    //// Case.2
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    // }, 1000);
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    // }, 2000);
+    // setTimeout(() => {
+    //   conn.write('Move: left');
+    // }, 3000);
+    // setTimeout(() => {
+    //   conn.write('Move: left');
+    // }, 3000);
+
+    // // Case.3
+    // let delay = 0;
+    // for (let i = 0; i < 20; i++) {
+    //   setTimeout(() => {
+    //     conn.write('Move: up');
+    //   }, delay);
+    //   delay += 50;
+    // }
+    
+    // // Case.4 setInterval
+    // //repeat with the interval of 50ms
+    // const timerId = setInterval(() => {
+    //   conn.write('Move: up');
+    // }, 50);
+    // // after 10 seconds stop
+    // setTimeout(() => {
+    //   clearInterval(timerId);
+    // }, 10000);
+  //});
+  
   return conn;
+  
 };
 
 console.log("Connecting ...");
