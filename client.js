@@ -15,6 +15,15 @@ const connect = function () {
     console.log('Server says: ', data);
   });
 
+  //The "connect" event is triggered on a connection as soon as it is successfully established.
+  //Print a message to the screen for us (the player) when the connection is successfully established.
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server');
+    //Send the string "Name: ___" to the server, upon connection
+    conn.write('Name: COO');
+  });
+
+
   return conn;
 };
 
